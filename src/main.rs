@@ -14,14 +14,13 @@ struct CPU {
 // 4. Perform the opreation
 
 //Initializ the CPU
-
 fn main() {
     let mut cpu = CPU {
-        current_opration: 0,
+        current_opration: 0, // inti with a no op
         registers: [0; 2],
     };
 
     cpu.current_opration = 0x8014;
-    cpu.registers[0] = 5;
+    cpu.registers[0] = 5; // register can hold u8 only
     cpu.registers[1] = 10;
 }
