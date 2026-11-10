@@ -12,6 +12,8 @@
 struct CPU {
     current_opration: u16,
     registers: [u8; 2],
+    postion_in_memory: usize, // this is a variable which indicate which istruction to execute next
+    memory: [u8; 0x1000],
 }
 
 impl CPU {
@@ -48,8 +50,9 @@ impl CPU {
 //Initializ the CPU
 fn main() {
     let mut cpu = CPU {
-        current_opration: 0, // init with a no op
+        current_opration: 0, // init with a no op -> 0 "zero" means no op
         registers: [0; 2],
+        postion_in_memory: 10,
     };
 
     cpu.current_opration = 0x8014; // 8 -> its has 2 register, 0&1 -> register address, 4 -> we have to do addition
