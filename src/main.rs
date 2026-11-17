@@ -1,11 +1,11 @@
 // define the CPU
-
 struct CPU {
     opcode: u16,
     registers: [u8; 2],
 }
 
 impl CPU {
+    /// just a function to read te opcode
     fn read_opcode(&self) -> u16 {
         self.opcode
     }
